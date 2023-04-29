@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         _moveHorizontalResult = GetMovementVectorFor(_cameraTransform.forward, _inputY);
 
         _moveVerticalResult = GetMovementVectorFor(_cameraTransform.right, _inputX);
-
+ 
         _rigidbody.MovePosition(transform.position + _moveHorizontalResult + _moveVerticalResult);
     }
 
