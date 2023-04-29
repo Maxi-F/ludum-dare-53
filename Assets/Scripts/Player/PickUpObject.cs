@@ -30,7 +30,7 @@ public class PickUpObject : MonoBehaviour
     private void Update()
     {
         LookAtObject();
-    }
+    } //asd
 
 
     private void PickUp()

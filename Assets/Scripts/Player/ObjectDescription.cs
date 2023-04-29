@@ -24,8 +24,9 @@ public class ObjectDescription : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && _pickUpObject.heldObject != null)
+        if (Input.GetKeyDown(KeyCode.Space) && _pickUpObject.heldObject != null)
         {
+            Debug.Log("Wtf");
             _hudCanvas.gameObject.SetActive(true);
             _objectDescriptionCanvas.gameObject.SetActive(false);
             _objectText.text = "";
