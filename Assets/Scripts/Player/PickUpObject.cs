@@ -17,7 +17,6 @@ public class PickUpObject : MonoBehaviour
     public void DropObject()
     {
         heldObject = null;
-        _ghostText.text = "";
     }
 
     private void Awake()
@@ -26,18 +25,22 @@ public class PickUpObject : MonoBehaviour
         _lookObject = GetComponent<LookObject>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         LookAtObject();
-    } //asd
+
+        if(heldObject != null)
+        {
+            _ghostText.text = "I should return to the ghost...";
+        }
+    }
 
 
     private void PickUp()
     {
         if (Input.GetKeyDown(KeyCode.E) && heldObject == null)
         {
-            _objectDescription.ShowDescription(_visiblePickableObject);
+            _objectDescription.ShowDescription(_visiblePickableObject.objectDescription);
             heldObject = _visiblePickableObject;
             UnIlluminateObject();
             heldObject.Disappear();
