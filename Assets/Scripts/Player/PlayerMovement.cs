@@ -30,10 +30,20 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        _moveHorizontalResult = _cameraTransform.forward * _inputY * _velocity * Time.deltaTime;
+        _moveHorizontalResult = GetMovementVectorFor(_cameraTransform.forward, _inputY);
 
-        _moveVerticalResult = _cameraTransform.right * _inputX * _velocity * Time.deltaTime;
+        _moveVerticalResult = GetMovementVectorFor(_cameraTransform.right, _inputX);
 
-        _rigidbody.MovePosition(transform.position + _moveHorizontalResult + _moveVerticalResult);        
+        _rigidbody.MovePosition(transform.position + _moveHorizontalResult + _moveVerticalResult);
+    }
+
+    private Vector3 GetMovementVectorFor(Vector3 cameraTransformVector, float input)
+    {
+        return new Vector3(GetNewPositionFor(cameraTransformVector.x, input), 0, GetNewPositionFor(cameraTransformVector.z, input));
+    }
+
+    private float GetNewPositionFor(float valueInVector, float input)
+    {
+        return valueInVector * input * _velocity * Time.deltaTime;
     }
 }
