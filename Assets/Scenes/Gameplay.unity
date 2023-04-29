@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 952333886}
   - component: {fileID: 952333885}
   m_Layer: 5
-  m_Name: Text - Press E To Continue
+  m_Name: Text - Press Space To Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,7 +617,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E To Continue...
+  m_text: Press Space To Continue...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -904,7 +904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1193154143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1487,10 +1487,10 @@ GameObject:
   - component: {fileID: 1878015148}
   - component: {fileID: 1878015147}
   - component: {fileID: 1878015150}
+  - component: {fileID: 1878015154}
   - component: {fileID: 1878015153}
   - component: {fileID: 1878015151}
   - component: {fileID: 1878015152}
-  - component: {fileID: 1878015154}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: MainCamera
