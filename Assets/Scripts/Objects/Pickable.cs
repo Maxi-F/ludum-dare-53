@@ -6,7 +6,8 @@ using UnityEngine;
 public class Pickable : MonoBehaviour, PickableInterface
 {
     [SerializeField] Material _newMaterial;
-    
+    [SerializeField] public string objectDescription;
+
     private MeshRenderer _meshRenderer;
     private Material _previousMaterial;
 

@@ -10,6 +10,17 @@ public class CameraRotationFromMouse : MonoBehaviour
 
     private float _rotationX = 0;
     private float _rotationY = 0;
+    private bool blockRotation = false;
+
+    public void BlockRotation()
+    {
+        blockRotation = true;
+    }
+
+    public void ReleaseRotation()
+    {
+        blockRotation = false;
+    }
 
     void Start()
     {
@@ -18,11 +29,14 @@ public class CameraRotationFromMouse : MonoBehaviour
 
     void Update()
     {
-        _rotationX -= Input.GetAxis("Mouse Y") * _sensitivity;
-        _rotationY += Input.GetAxis("Mouse X") * _sensitivity;
+        if(!blockRotation)
+        {
+            _rotationX -= Input.GetAxis("Mouse Y") * _sensitivity;
+            _rotationY += Input.GetAxis("Mouse X") * _sensitivity;
 
-        _rotationX = Mathf.Clamp(_rotationX, _minXRotation, _maxXRotation);        
+            _rotationX = Mathf.Clamp(_rotationX, _minXRotation, _maxXRotation);
 
-        transform.eulerAngles = new Vector3(_rotationX, _rotationY, 0.0f);
+            transform.eulerAngles = new Vector3(_rotationX, _rotationY, 0.0f);
+        }
     }    
 }
