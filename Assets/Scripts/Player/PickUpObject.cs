@@ -3,42 +3,57 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(LookObject))]
+[RequireComponent(typeof(ObjectDescription))]
 public class PickUpObject : MonoBehaviour
 {
-    [SerializeField] [Range(1.0f, 5.0f)] private float _maxRaycastDistance;
     [SerializeField] private TextMeshProUGUI _ghostText;
 
+    private LookObject _lookObject;
     private Pickable _visiblePickableObject;
-    private Pickable _heldObject;
+    private ObjectDescription _objectDescription;
+    public Pickable heldObject;
 
-    // Update is called once per frame
-    void Update()
+    public void DropObject()
     {
-        LookAtObject();
+        heldObject = null;
     }
 
-
-    void PickUp()
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        _objectDescription = GetComponent<ObjectDescription>();
+        _lookObject = GetComponent<LookObject>();
+    }
+
+    private void Update()
+    {
+        LookAtObject();
+
+        if(heldObject != null)
         {
-            if (_heldObject == null)
-            {
-                _ghostText.text = "I should return to the ghost...";
-                _heldObject = _visiblePickableObject;
-                UnIlluminateObject();
-                _heldObject.Disappear();
-            }
+            _ghostText.text = "I should return to the ghost...";
         }
     }
 
-    void LookAtObject()
-    {
-        RaycastHit objectInfo;
 
-        Ray ray = new Ray(transform.position, transform.forward);
-        if (_heldObject == null && Physics.Raycast(ray, out objectInfo, _maxRaycastDistance))
+    private void PickUp()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && heldObject == null)
         {
+            _objectDescription.ShowDescription(_visiblePickableObject.objectDescription);
+            heldObject = _visiblePickableObject;
+            UnIlluminateObject();
+            heldObject.Disappear();
+        }
+    }
+
+    private void LookAtObject()
+    {
+
+        if (heldObject == null && _lookObject.isLookingToObject)
+        {
+            RaycastHit objectInfo = _lookObject.lookedObject;
+
             if (objectInfo.rigidbody != null)
             {
                 Pickable pickableObject = objectInfo.rigidbody.gameObject.GetComponent<Pickable>();
@@ -65,12 +80,12 @@ public class PickUpObject : MonoBehaviour
         }
     }
 
-    bool areSameObjects(Pickable anObject, Pickable otherObject)
+    private bool areSameObjects(Pickable anObject, Pickable otherObject)
     {
         return anObject.Name() == otherObject.Name();
     }
 
-    void UnIlluminateObject()
+    private void UnIlluminateObject()
     {
         if (_visiblePickableObject != null)
         {

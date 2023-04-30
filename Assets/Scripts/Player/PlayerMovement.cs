@@ -15,26 +15,41 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _moveVerticalResult;
 
     private float _inputX;
-    private float _inputY;  
+    private float _inputY;
+
+    private bool blockMovement = false;
     
-    void Awake()
+    public void BlockMovement()
+    {
+        blockMovement = true;
+    }
+
+    public void ReleaseMovement()
+    {
+        blockMovement = false;
+    }
+
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
     }   
 
-    void Update()
+    private void Update()
     {
         _inputX = Input.GetAxisRaw("Horizontal");
         _inputY = Input.GetAxisRaw("Vertical");        
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        _moveHorizontalResult = GetMovementVectorFor(_cameraTransform.forward, _inputY);
+        if(!blockMovement)
+        {
+            _moveHorizontalResult = GetMovementVectorFor(_cameraTransform.forward, _inputY);
 
-        _moveVerticalResult = GetMovementVectorFor(_cameraTransform.right, _inputX);
- 
-        _rigidbody.MovePosition(transform.position + _moveHorizontalResult + _moveVerticalResult);
+            _moveVerticalResult = GetMovementVectorFor(_cameraTransform.right, _inputX);
+
+            _rigidbody.MovePosition(transform.position + _moveHorizontalResult + _moveVerticalResult);
+        }
     }
 
     private Vector3 GetMovementVectorFor(Vector3 cameraTransformVector, float input)
