@@ -4,7 +4,8 @@ using UnityEngine;
 public class PauseManager : MonoBehaviour
 {
     [SerializeField] private Canvas _pauseCanvas;
-
+    [SerializeField] private CameraRotationFromMouse _cameraRotation;
+    [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private KeyCode _pauseKey;
 
     void Awake()
@@ -28,11 +29,13 @@ public class PauseManager : MonoBehaviour
 
             if (_pauseCanvas.enabled)
             {
-                Time.timeScale = 0.0f;                
+                _cameraRotation.BlockRotation();
+                _playerMovement.BlockMovement();
             }
             else 
             {
-                Time.timeScale = 1.0f;
+                _cameraRotation.ReleaseRotation();
+                _playerMovement.ReleaseMovement();
             }
         }
     }  
@@ -41,6 +44,7 @@ public class PauseManager : MonoBehaviour
     {
         _pauseCanvas.enabled = false;
 
-        Time.timeScale = 1.0f;
+        _cameraRotation.ReleaseRotation();
+        _playerMovement.ReleaseMovement();
     }
 }
