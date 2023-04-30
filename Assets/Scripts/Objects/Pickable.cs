@@ -36,4 +36,9 @@ public class Pickable : MonoBehaviour, PickableInterface
     {
         gameObject.SetActive(false);
     }
+
+    public void Appear()
+    {
+        gameObject.SetActive(true);
+    }
 }

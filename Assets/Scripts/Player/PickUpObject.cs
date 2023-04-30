@@ -17,6 +17,7 @@ public class PickUpObject : MonoBehaviour
     public void DropObject()
     {
         heldObject = null;
+        _ghostText.text = "";
     }
 
     private void Awake()

@@ -17,7 +17,6 @@ public class GhostInteractor : MonoBehaviour
         _lookObject = GetComponent<LookObject>();
         _objectDescription = GetComponent<ObjectDescription>();
     }
-    // Update is called once per frame
     void Update()
     {
         if (_lookObject.isLookingToObject)
