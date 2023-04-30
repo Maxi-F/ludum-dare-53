@@ -7,43 +7,33 @@ public class Ghost : MonoBehaviour, GhostInterface
 {
     [SerializeField] private Pickable _expectedPickableObject;
     [SerializeField] private Ghost _nextGhost;
-    [SerializeField] private TextMeshProUGUI _ghostText;
+    [SerializeField] private ObjectDescription _ghostMessageSender;
     [SerializeField] public string wantedObjectDescription;
-
-    private bool _isHudCleanupExecuting = false;
+    [SerializeField] private string _expectedGivenObjectDescription;
+    [SerializeField] private string _notExpectedGivenObjectDescription;
 
     public void ObtainObject(Pickable heldObject)
     {
         if (ReferenceEquals(_expectedPickableObject.gameObject, heldObject.gameObject))
         {
-            _nextGhost.gameObject.SetActive(true);
-            gameObject.SetActive(false);
-            _ghostText.text = "Correct Item! Next ghost awaiting...";
-            _nextGhost.CallCleanup();
-            
+            ReceivedExpectedObject();
         } else
         {
-            _ghostText.text = "This was not the wanted item...";
-            CallCleanup();
+            _ghostMessageSender.ShowDescription(_notExpectedGivenObjectDescription);
+            heldObject.Appear();
         }
     }
 
-    public void CallCleanup()
+    private void ReceivedExpectedObject()
     {
-        StartCoroutine(CleanupHudMessage());
-    }
-
-    private IEnumerator CleanupHudMessage()
-    {
-        if (_isHudCleanupExecuting)
-            yield break;
-
-        _isHudCleanupExecuting = true;
-
-        yield return new WaitForSeconds(5);
-
-        _ghostText.text = "";
-
-        _isHudCleanupExecuting = false;
+        if(_nextGhost != null)
+        {
+            _ghostMessageSender.ShowDescription(_expectedGivenObjectDescription);
+            _nextGhost.gameObject.SetActive(true);
+            gameObject.SetActive(false);
+        } else
+        {
+            ScenesManager.LoadSceneEndScreen();
+        }
     }
 }
