@@ -5,16 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 public class Pickable : MonoBehaviour, PickableInterface
 {
-    [SerializeField] Material _newMaterial;
     [SerializeField] public string objectDescription;
 
     private MeshRenderer _meshRenderer;
-    private Material _previousMaterial;
 
     private void Awake()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
-        _previousMaterial = _meshRenderer.material;
     }
 
     public string Name()
@@ -24,12 +21,12 @@ public class Pickable : MonoBehaviour, PickableInterface
 
     public void Illuminate()
     {
-        _meshRenderer.material = _newMaterial;
+        _meshRenderer.material.SetColor("_Color", Color.red);
     }
 
     public void UnIlluminate()
     {
-        _meshRenderer.material = _previousMaterial;
+        _meshRenderer.material.SetColor("_Color", Color.white);
     }
 
     public void Disappear()

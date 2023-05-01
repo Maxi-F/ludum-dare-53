@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LookObject : MonoBehaviour
 {
-    [SerializeField] [Range(1.0f, 5.0f)] private float _maxRaycastDistance;
+    [SerializeField] [Range(1.0f, 10.0f)] private float _maxRaycastDistance;
     public RaycastHit lookedObject;
     public bool isLookingToObject;
 

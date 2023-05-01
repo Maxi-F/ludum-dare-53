@@ -14,6 +14,7 @@ public class ObjectDescription : MonoBehaviour
 
     private CameraRotationFromMouse _cameraRotation;
     private bool isShowingDescription = false;
+    private bool _shouldEnd = false;
 
     private void Awake()
     {
@@ -24,15 +25,21 @@ public class ObjectDescription : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isShowingDescription)
         {
-            _hudCanvas.gameObject.SetActive(true);
-            _objectDescriptionCanvas.gameObject.SetActive(false);
-            _objectText.text = "";
-            _cameraRotation.ReleaseRotation();
-            _playerMovement.ReleaseMovement();
+            if(_shouldEnd)
+            {
+                ScenesManager.LoadSceneEndScreen();
+            } else
+            {
+                _hudCanvas.gameObject.SetActive(true);
+                _objectDescriptionCanvas.gameObject.SetActive(false);
+                _objectText.text = "";
+                _cameraRotation.ReleaseRotation();
+                _playerMovement.ReleaseMovement();
+            }
         }
     }
 
-    public void ShowDescription(string description)
+    public void ShowDescription(string description, bool shouldEnd = false)
     {
         _hudCanvas.gameObject.SetActive(false);
         _objectText.text = description;
@@ -40,5 +47,6 @@ public class ObjectDescription : MonoBehaviour
         _cameraRotation.BlockRotation();
         _playerMovement.BlockMovement();
         isShowingDescription = true;
+        _shouldEnd = shouldEnd;
     }
 }

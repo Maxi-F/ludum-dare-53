@@ -26,14 +26,11 @@ public class Ghost : MonoBehaviour, GhostInterface
 
     private void ReceivedExpectedObject()
     {
-        if(_nextGhost != null)
-        {
-            _ghostMessageSender.ShowDescription(_expectedGivenObjectDescription);
-            _nextGhost.gameObject.SetActive(true);
-            gameObject.SetActive(false);
-        } else
-        {
-            ScenesManager.LoadSceneEndScreen();
-        }
+            _ghostMessageSender.ShowDescription(_expectedGivenObjectDescription, _nextGhost == null);
+            if(_nextGhost != null)
+            {
+                _nextGhost.gameObject.SetActive(true);
+                gameObject.SetActive(false);
+            }
     }
 }
