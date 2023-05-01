@@ -30,7 +30,10 @@ public class ImagesManager : MonoBehaviour
             {
                 _count += 1;
 
-                _image.sprite = _sprites[_count];
+                if (_count < _sprites.Length) 
+                { 
+                    _image.sprite = _sprites[_count]; 
+                }
 
                 _timer = _timeBetweenImages;
             }
