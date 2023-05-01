@@ -39,6 +39,10 @@ public class ImagesManager : MonoBehaviour
             }
             else
             {
+                AudioManager audioManager = FindObjectOfType<AudioManager>();
+                audioManager.StopAll();
+                audioManager.Play("Gameplay");
+
                 ScenesManager.LoadSceneGameplay();
             }            
         }
