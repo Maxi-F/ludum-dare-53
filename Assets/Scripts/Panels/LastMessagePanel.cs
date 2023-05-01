@@ -7,6 +7,7 @@ public class LastMessagePanel : MonoBehaviour
 {
     private CanvasGroup _canvasGroup;
     private bool finished = false;
+    private bool hided = false;
     private float finishedTime;
 
     [SerializeField] [Range(0f, 10f)] private float _waitSeconds;
@@ -40,6 +41,10 @@ public class LastMessagePanel : MonoBehaviour
             if(_canvasGroup.alpha > 0)
             {
                 _canvasGroup.alpha -= Time.deltaTime;
+            } else if(!hided)
+            {
+                hided = true;
+                gameObject.SetActive(false);
             }
         }
     }
