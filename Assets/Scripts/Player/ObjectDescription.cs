@@ -48,6 +48,7 @@ public class ObjectDescription : MonoBehaviour
                 
                 image.gameObject.SetActive(false);
 
+                isShowingDescription = false;
                 _objectDescriptionCanvas.gameObject.SetActive(false);
                 _objectText.text = "";
                 _cameraRotation.ReleaseRotation();
