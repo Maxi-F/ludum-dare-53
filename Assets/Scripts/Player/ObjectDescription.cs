@@ -28,12 +28,14 @@ public class ObjectDescription : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isShowingDescription)
         {
-            if(_shouldEnd)
+            AudioManager _audioManager = FindObjectOfType<AudioManager>();
+            if (_shouldEnd)
             {
+                _audioManager.StopAll();
+                _audioManager.Play("Pistol");
                 ScenesManager.LoadSceneEndScreen();
             } else
             {
-                AudioManager _audioManager = FindObjectOfType<AudioManager>();
                 _audioManager.Stop("Fantasmas_objetos");
                 _audioManager.Play(_musicToPlay);
 
