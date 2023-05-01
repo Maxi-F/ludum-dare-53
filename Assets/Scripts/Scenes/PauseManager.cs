@@ -53,4 +53,9 @@ public class PauseManager : MonoBehaviour
 
         Time.timeScale = 1.0f;
     }
+
+    public void SetTimeScaleToNormal() 
+    {
+        Time.timeScale = 1.0f;
+    }
 }
