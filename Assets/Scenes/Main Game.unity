@@ -291,7 +291,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -726,7 +726,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -825,7 +825,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -965,7 +965,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -1230,7 +1230,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -1531,7 +1531,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -1625,7 +1625,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -1839,7 +1839,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -1933,7 +1933,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -2370,7 +2370,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -2714,7 +2714,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -2874,7 +2874,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -3568,7 +3568,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.767298, b: 0.5330188, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 6
   m_SpotAngle: 135
   m_InnerSpotAngle: 1
@@ -10086,7 +10086,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 95c70a9c1548baa41bd7374768c1bed0, type: 2}
+  - {fileID: 2100000, guid: 4cb539f49de6c684484f93a805de7530, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13604,7 +13604,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8188402541139004602, guid: 58c1d68fc330f7040933299bad3f2464, type: 3}
+  - {fileID: 2100000, guid: 4cb539f49de6c684484f93a805de7530, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
