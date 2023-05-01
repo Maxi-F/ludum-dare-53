@@ -8,7 +8,7 @@ public class EndPanel : MonoBehaviour
     private CanvasGroup _canvasGroup;
     private bool finished = false;
 
-    [SerializeField] [Range(0f, 10f)] private float _waitSeconds;
+    [SerializeField] [Range(0f, 50f)] private float _waitSeconds;
 
     // Start is called before the first frame update
     void Start()
