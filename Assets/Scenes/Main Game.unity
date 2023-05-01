@@ -543,17 +543,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b667dac63762a4db068bfa3dc91763, type: 3}
---- !u!114 &225602085 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1588969291554472967, guid: 15b667dac63762a4db068bfa3dc91763, type: 3}
-  m_PrefabInstance: {fileID: 225602084}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53d4ce5dd3b51304f8470707b903a64e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &253404935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1043,15 +1032,19 @@ PrefabInstance:
       objectReference: {fileID: 8907033385228732306}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: wantedObjectDescription
-      value: A Knife.
+      value: Give me my knife.
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: _expectedGivenObjectDescription
-      value: Thank you.
+      value: I should've not left... I should've listened... I didn't know what I
+        had until I lost it. I was alone and afraid. I couldn't see nothing, everything
+        was foggy, and then a bang. I didn't knew what I was doing until it was too
+        late. My son, my wife, my dad. Everyone. Dead because of me. They tried to
+        help me, but it was too late.
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: _notExpectedGivenObjectDescription
-      value: This is not what I asked.
+      value: Give me MY KNIFE.
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195832, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: m_Enabled
@@ -2941,6 +2934,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6255242931607312433, guid: 8c01773fb4c0f4543b9dc1cb2363d0da, type: 3}
   m_PrefabInstance: {fileID: 687268599}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1491113988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7366569530366956013, guid: 749fa8d2563f2da4b8636367a93800de, type: 3}
+  m_PrefabInstance: {fileID: 1791864557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1491113990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491113988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d961eae22a1404c40a558137dd92483f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1602516265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2967,11 +2977,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: _expectedGivenObjectDescription
-      value: Thank you.
+      value: We were so close... everything was like a dream, until they ruined our
+        family. I tried to handle the situation as best as I could, but some things
+        cannot be fixed.
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: _notExpectedGivenObjectDescription
-      value: This is not what I asked.
+      value: This is not that photo...
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195832, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: m_Enabled
@@ -3180,13 +3192,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4283337258849481204, guid: 749fa8d2563f2da4b8636367a93800de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283337258849481204, guid: 749fa8d2563f2da4b8636367a93800de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4283337258849481204, guid: 749fa8d2563f2da4b8636367a93800de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 225602085}
+      objectReference: {fileID: 1491113990}
     - target: {fileID: 4283337258849481204, guid: 749fa8d2563f2da4b8636367a93800de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3197,15 +3213,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4283337258849481204, guid: 749fa8d2563f2da4b8636367a93800de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadSceneMainMenu
+      value: Click
       objectReference: {fileID: 0}
     - target: {fileID: 4283337258849481204, guid: 749fa8d2563f2da4b8636367a93800de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetTimeScaleToNormal
       objectReference: {fileID: 0}
     - target: {fileID: 4283337258849481204, guid: 749fa8d2563f2da4b8636367a93800de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283337258849481204, guid: 749fa8d2563f2da4b8636367a93800de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PauseManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283337258849481204, guid: 749fa8d2563f2da4b8636367a93800de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: BackToMenu
       objectReference: {fileID: 0}
     - target: {fileID: 4283337258849481204, guid: 749fa8d2563f2da4b8636367a93800de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName

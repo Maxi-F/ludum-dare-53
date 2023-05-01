@@ -57,7 +57,6 @@ public class PickUpObject : MonoBehaviour
 
             if (objectInfo.rigidbody != null)
             {
-                Debug.Log(objectInfo.rigidbody.name);
                 Pickable pickableObject = objectInfo.rigidbody.gameObject.GetComponent<Pickable>();
                 if (pickableObject != null)
                 {

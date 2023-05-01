@@ -59,7 +59,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Busqueda_objeto_final
     clip: {fileID: 8300000, guid: a7502f5a00baa9342b7c269cb69def6a, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}

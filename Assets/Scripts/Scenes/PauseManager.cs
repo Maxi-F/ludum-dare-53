@@ -8,6 +8,9 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private KeyCode _pauseKey;
 
+    [HideInInspector]
+    private bool _wasAlreadyBlocked = false;
+
     void Awake()
     {
 
@@ -45,13 +48,21 @@ public class PauseManager : MonoBehaviour
                 _audioManager.Stop("Pausa");
                 _audioManager.ResumeAll();
 
-                _cameraRotation.ReleaseRotation();
-                _playerMovement.ReleaseMovement();
+                if(!_wasAlreadyBlocked)
+                {
+                    _cameraRotation.ReleaseRotation();
+                    _playerMovement.ReleaseMovement();
+                }
 
                 Time.timeScale = 1.0f;
             }
         }
     }  
+
+    public void SetWasAlreadyBlocked(bool value)
+    {
+        _wasAlreadyBlocked = value;
+    }
 
     public void ClosePause() 
     {
@@ -61,8 +72,11 @@ public class PauseManager : MonoBehaviour
 
         _pauseCanvas.enabled = false;
 
-        _cameraRotation.ReleaseRotation();
-        _playerMovement.ReleaseMovement();
+        if (!_wasAlreadyBlocked)
+        {
+            _cameraRotation.ReleaseRotation();
+            _playerMovement.ReleaseMovement();
+        }
 
         Time.timeScale = 1.0f;
     }

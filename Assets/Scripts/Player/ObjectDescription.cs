@@ -16,6 +16,9 @@ public class ObjectDescription : MonoBehaviour
     private bool isShowingDescription = false;
     private bool _shouldEnd = false;
 
+    [HideInInspector]
+    private string _musicToPlay = "Gameplay";
+
     private void Awake()
     {
         _cameraRotation = GetComponent<CameraRotationFromMouse>();   
@@ -32,7 +35,10 @@ public class ObjectDescription : MonoBehaviour
             {
                 AudioManager _audioManager = FindObjectOfType<AudioManager>();
                 _audioManager.Stop("Fantasmas_objetos");
-                _audioManager.Play("Gameplay");
+                _audioManager.Play(_musicToPlay);
+
+                PauseManager _pauseManager = FindObjectOfType<PauseManager>();
+                _pauseManager.SetWasAlreadyBlocked(false);
 
                 _hudCanvas.gameObject.SetActive(true);
                 _objectDescriptionCanvas.gameObject.SetActive(false);
@@ -43,10 +49,19 @@ public class ObjectDescription : MonoBehaviour
         }
     }
 
+    public void SetMusicToPlay(string name)
+    {
+        _musicToPlay = name;
+    }
+
     public void ShowDescription(string description, string audioClip = "", bool shouldEnd = false)
     {
         AudioManager _audioManager = FindObjectOfType<AudioManager>();
         _audioManager.PauseAll();
+
+        PauseManager _pauseManager = FindObjectOfType<PauseManager>();
+        _pauseManager.SetWasAlreadyBlocked(true);
+
         if(audioClip != "")
         {
             _audioManager.Play(audioClip);
