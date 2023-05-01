@@ -10,6 +10,13 @@ public class ButtonManager : MonoBehaviour
         
         switch (name)
         {
+            case "BackToMenu":
+
+                audioManager.StopAll();
+                audioManager.Play("Click");
+                audioManager.Play("Intro_outro");
+                ScenesManager.LoadSceneMainMenu();
+                break;
             case "MainMenu":
                 audioManager.Play("Click");
                 ScenesManager.LoadSceneMainMenu();
@@ -29,6 +36,9 @@ public class ButtonManager : MonoBehaviour
                 ScenesManager.LoadSceneIntro();
                 break;
             case "Gameplay":
+                audioManager.StopAll();
+                audioManager.Play("Click");
+                audioManager.Play("Gameplay");
                 ScenesManager.LoadSceneGameplay();
                 break;
             case "EndScreen":
