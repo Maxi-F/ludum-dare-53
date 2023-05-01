@@ -31,11 +31,15 @@ public class PauseManager : MonoBehaviour
             {
                 _cameraRotation.BlockRotation();
                 _playerMovement.BlockMovement();
+
+                Time.timeScale = 0.0f;
             }
             else 
             {
                 _cameraRotation.ReleaseRotation();
                 _playerMovement.ReleaseMovement();
+
+                Time.timeScale = 1.0f;
             }
         }
     }  
@@ -46,5 +50,7 @@ public class PauseManager : MonoBehaviour
 
         _cameraRotation.ReleaseRotation();
         _playerMovement.ReleaseMovement();
+
+        Time.timeScale = 1.0f;
     }
 }
