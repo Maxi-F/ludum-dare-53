@@ -6,6 +6,7 @@ using UnityEngine;
 public class Pickable : MonoBehaviour, PickableInterface
 {
     [SerializeField] public string objectDescription;
+    [SerializeField] public Sprite objectSprite;
 
     private MeshRenderer _meshRenderer;
 

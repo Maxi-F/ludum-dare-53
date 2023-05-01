@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 [RequireComponent(typeof(CameraRotationFromMouse))]
@@ -11,6 +12,7 @@ public class ObjectDescription : MonoBehaviour
     [SerializeField] private Canvas _hudCanvas;
     [SerializeField] private Canvas _objectDescriptionCanvas;
     [SerializeField] private TextMeshProUGUI _objectText;
+    [SerializeField] private Image image;
 
     private CameraRotationFromMouse _cameraRotation;
     private bool isShowingDescription = false;
@@ -43,6 +45,9 @@ public class ObjectDescription : MonoBehaviour
                 _pauseManager.SetWasAlreadyBlocked(false);
 
                 _hudCanvas.gameObject.SetActive(true);
+                
+                image.gameObject.SetActive(false);
+
                 _objectDescriptionCanvas.gameObject.SetActive(false);
                 _objectText.text = "";
                 _cameraRotation.ReleaseRotation();
@@ -56,7 +61,7 @@ public class ObjectDescription : MonoBehaviour
         _musicToPlay = name;
     }
 
-    public void ShowDescription(string description, string audioClip = "", bool shouldEnd = false)
+    public void ShowDescription(string description, string audioClip = "", bool shouldEnd = false, Sprite sprite = null)
     {
         AudioManager _audioManager = FindObjectOfType<AudioManager>();
         _audioManager.PauseAll();
@@ -73,6 +78,13 @@ public class ObjectDescription : MonoBehaviour
         _hudCanvas.gameObject.SetActive(false);
         _objectText.text = description;
         _objectDescriptionCanvas.gameObject.SetActive(true);
+
+        if(sprite != null)
+        {
+            image.gameObject.SetActive(true);
+            image.sprite = sprite;
+        }
+
         _cameraRotation.BlockRotation();
         _playerMovement.BlockMovement();
         isShowingDescription = true;
