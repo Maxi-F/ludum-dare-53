@@ -1032,15 +1032,17 @@ PrefabInstance:
       objectReference: {fileID: 8907033385228732306}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: wantedObjectDescription
-      value: Give me my knife.
+      value: "The knife\u2026 toy\u2026 that\u2026 no\u2026 the knife\u2026 bring
+        me the knife\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: _expectedGivenObjectDescription
-      value: I should've not left... I should've listened... I didn't know what I
-        had until I lost it. I was alone and afraid. I couldn't see nothing, everything
-        was foggy, and then a bang. I didn't knew what I was doing until it was too
-        late. My son, my wife, my dad. Everyone. Dead because of me. They tried to
-        help me, but it was too late.
+      value: "I should have never left, I should have listened to my father. The
+        memories, the traumas, I couldn\u2019t get rid of them. It was a loudy noise,
+        I don\u2019t know what, but everything around me got cloudy. I was brought
+        back to that place\u2026 I lost control. I didn\u2019t know what I was doing
+        till it was too late\u2026 my father\u2026 my wife\u2026 my\u2026 my son\u2026
+        It was my fault. It is\u2026 to late\u2026 for me\u2026  "
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: _notExpectedGivenObjectDescription
@@ -1375,6 +1377,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas - Object Description
       objectReference: {fileID: 0}
+    - target: {fileID: 773155362609232821, guid: 867a6510dcd28d44cb153dc180d016ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 773155363134921453, guid: 867a6510dcd28d44cb153dc180d016ff, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1600
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 867a6510dcd28d44cb153dc180d016ff, type: 3}
 --- !u!1001 &687268599
@@ -1701,14 +1711,15 @@ PrefabInstance:
       objectReference: {fileID: 8296680264272039660}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: wantedObjectDescription
-      value: Hey! You seem familiar... you look like a friend of mine. He always
-        wore a medal... I wonder where he put it.
+      value: "Hey, you look a lot like a friend of mine, but I can\u2019t remember
+        who. Hmm, he used to wear a medal all the time. I wonder where I left it\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: _expectedGivenObjectDescription
-      value: I knew it was a bad idea from the start... but he insisted to get enlisted.
-        He said it was his duty. He wanted to defend the country. We did not talk
-        for a long time, but when he said he needed help I tried to help him.
+      value: "Since the beginning, I knew it was a bad idea. But he insisted on enlisting.
+        He said it was his duty.  We spent a lot of time without talking to each
+        other, even after he returned\u2026 When I was told that he needed help,
+        I put aside my anger and tried to help him. "
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: _notExpectedGivenObjectDescription
@@ -2441,13 +2452,14 @@ PrefabInstance:
       objectReference: {fileID: 8338360459909842192}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: wantedObjectDescription
-      value: Did you see my toy? If I don't find it, my father will be really sad
-        that I did not take good care of it...
+      value: "Have you seen my toy? If I don\u2019t find it, my father will be very
+        sad for not taking care of it."
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: _expectedGivenObjectDescription
-      value: You found it? Yay! I played a lot with my dad before he left for a long
-        time... That's why he gave me this toy. I will always remember him.
+      value: Thanks for returning it back to me. I used to play with my father until
+        he had to leave for a long time. So, he gifted this toy to me, to always
+        remember him.
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: _notExpectedGivenObjectDescription
@@ -2972,14 +2984,15 @@ PrefabInstance:
       objectReference: {fileID: 8540621149136855690}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: wantedObjectDescription
-      value: I just keep remembering the good times. That photo represented it. That
-        day was perfect.
+      value: "I keep holding on to the memory of that photo. That day was perfect,
+        and we didn\u2019t realise how happy we were.  I wish I could remember that
+        happiness one more time. Could you bring that photo to me? "
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: _expectedGivenObjectDescription
-      value: We were so close... everything was like a dream, until they ruined our
-        family. I tried to handle the situation as best as I could, but some things
-        cannot be fixed.
+      value: We were all very united, everything was fine until he made up his mind.
+        After that, I tried to handle the situation the best I could, but some things
+        break and can never be fixed.
       objectReference: {fileID: 0}
     - target: {fileID: 3141484043859195829, guid: 5202bb0c1e7d5634cae8225865d1e6cf, type: 3}
       propertyPath: _notExpectedGivenObjectDescription
@@ -6623,7 +6636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089775040684084871}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13409,7 +13422,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b45927bb53d3143bce2ff52e73ef78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectDescription: A medal.
+  objectDescription: "The medal of valor. He told us he saved some of his friends
+    after they were captured. Unfortunatelly, he couldn\u2019t save all of them.
+    He felt guilty for it, even though he said he was fine."
 --- !u!64 &8296680264272039661
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13646,7 +13661,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b45927bb53d3143bce2ff52e73ef78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectDescription: A child's toy.
+  objectDescription: "A toy train. I remember this one\u2026 it was his favorite
+    toy, and he used to play with it everyday. For some reason, he was always a big
+    fan of trains, so he received one for his fourth birthday."
 --- !u!54 &8338360459909842193
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14002,7 +14019,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b45927bb53d3143bce2ff52e73ef78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectDescription: An old photo of a happy family.
+  objectDescription: 'Everytime I see this picture, I try to remember the last time
+    I was as happy as I was back then.  It was a warm and bright day, and the four
+    of us went to a camping day. That was two or three years before the beginning
+    of the downfall of our family. '
 --- !u!23 &8559082332623557603
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14532,7 +14552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b45927bb53d3143bce2ff52e73ef78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectDescription: A bloody knife.
+  objectDescription: ...
 --- !u!54 &8907033385228732307
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -48,7 +48,7 @@ public class PauseManager : MonoBehaviour
                 _audioManager.Stop("Pausa");
                 _audioManager.ResumeAll();
 
-                if(!_wasAlreadyBlocked)
+                if (!_wasAlreadyBlocked)
                 {
                     _cameraRotation.ReleaseRotation();
                     _playerMovement.ReleaseMovement();
@@ -56,6 +56,8 @@ public class PauseManager : MonoBehaviour
 
                 Time.timeScale = 1.0f;
             }
+
+            Cursor.visible = _pauseCanvas.enabled;
         }
     }  
 
@@ -66,6 +68,7 @@ public class PauseManager : MonoBehaviour
 
     public void ClosePause() 
     {
+        Cursor.visible = false;
         AudioManager _audioManager = FindObjectOfType<AudioManager>();
         _audioManager.Stop("Pausa");
         _audioManager.ResumeAll();
