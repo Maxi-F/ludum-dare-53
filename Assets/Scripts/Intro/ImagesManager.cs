@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ImagesManager : MonoBehaviour
 {
     [SerializeField] private Image _image;
 
-    [SerializeField] private Sprite[] _sprites;
+    [SerializeField] private TextMeshProUGUI _text;
 
-    [SerializeField] [Range(1.0f, 5.0f)] private float _timeBetweenImages;
+    [SerializeField] private IntroImage[] _introImages;
+
+    [SerializeField] private float _firstTiming;
 
     private int _count;
 
@@ -17,25 +20,27 @@ public class ImagesManager : MonoBehaviour
     {
         _count = 0;
 
-        _timer = _timeBetweenImages;
+        _timer = _firstTiming;
 
-        _image.sprite = _sprites[0];
+        _image.sprite = _introImages[0].sprite;
+
+        _text.text = _introImages[0].text;
     }
 
     void Update()
     {
         if (_timer <= 0.0f)
         {
-            if (_count < _sprites.Length)
+            if (_count < _introImages.Length)
             {
                 _count += 1;
+                if (_count < _introImages.Length)
+                {
+                    _image.sprite = _introImages[_count].sprite;
+                    _text.text = _introImages[_count].text;
 
-                if (_count < _sprites.Length) 
-                { 
-                    _image.sprite = _sprites[_count]; 
+                    _timer = _introImages[_count].timeInPlace;
                 }
-
-                _timer = _timeBetweenImages;
             }
             else
             {
