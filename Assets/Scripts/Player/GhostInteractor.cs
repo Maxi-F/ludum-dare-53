@@ -11,6 +11,8 @@ public class GhostInteractor : MonoBehaviour
     private LookObject _lookObject;
     private ObjectDescription _objectDescription;
 
+    private bool _isInteracting = false;
+
     private void Awake()
     {
         _pickUpObject = GetComponent<PickUpObject>();
@@ -19,13 +21,19 @@ public class GhostInteractor : MonoBehaviour
     }
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            _isInteracting = false;
+        }
+
         if (_lookObject.isLookingToObject)
         {
             Ghost ghost = _lookObject.lookedObject.transform.GetComponent<Ghost>();
             if (ghost)
             {
-                if(Input.GetKeyDown(KeyCode.E))
+                if(Input.GetKeyDown(KeyCode.E) && !_isInteracting)
                 {
+                    _isInteracting = true;
                     if (_pickUpObject.heldObject == null)
                     {
                         _objectDescription.ShowDescription(ghost.wantedObjectDescription);
