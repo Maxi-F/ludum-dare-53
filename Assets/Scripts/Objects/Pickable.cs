@@ -21,12 +21,12 @@ public class Pickable : MonoBehaviour, PickableInterface
 
     public void Illuminate()
     {
-        _meshRenderer.material.SetColor("_Color", Color.red);
+        _meshRenderer.material.EnableKeyword("_EMISSION");
     }
 
     public void UnIlluminate()
     {
-        _meshRenderer.material.SetColor("_Color", Color.white);
+        _meshRenderer.material.DisableKeyword("_EMISSION");
     }
 
     public void Disappear()

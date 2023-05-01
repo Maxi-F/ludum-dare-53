@@ -41,7 +41,7 @@ public class PickUpObject : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && heldObject == null)
         {
-            _objectDescription.ShowDescription(_visiblePickableObject.objectDescription);
+            _objectDescription.ShowDescription(_visiblePickableObject.objectDescription, "Agarrar");
             heldObject = _visiblePickableObject;
             UnIlluminateObject();
             heldObject.Disappear();

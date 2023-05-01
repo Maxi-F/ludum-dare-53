@@ -30,6 +30,10 @@ public class ObjectDescription : MonoBehaviour
                 ScenesManager.LoadSceneEndScreen();
             } else
             {
+                AudioManager _audioManager = FindObjectOfType<AudioManager>();
+                _audioManager.Stop("Fantasmas_objetos");
+                _audioManager.Play("Gameplay");
+
                 _hudCanvas.gameObject.SetActive(true);
                 _objectDescriptionCanvas.gameObject.SetActive(false);
                 _objectText.text = "";
@@ -39,8 +43,16 @@ public class ObjectDescription : MonoBehaviour
         }
     }
 
-    public void ShowDescription(string description, bool shouldEnd = false)
+    public void ShowDescription(string description, string audioClip = "", bool shouldEnd = false)
     {
+        AudioManager _audioManager = FindObjectOfType<AudioManager>();
+        _audioManager.PauseAll();
+        if(audioClip != "")
+        {
+            _audioManager.Play(audioClip);
+        }
+        _audioManager.Play("Fantasmas_objetos");
+
         _hudCanvas.gameObject.SetActive(false);
         _objectText.text = description;
         _objectDescriptionCanvas.gameObject.SetActive(true);

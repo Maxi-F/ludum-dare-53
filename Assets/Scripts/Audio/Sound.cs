@@ -32,6 +32,11 @@ public class Sound
         source.Play();
     }
 
+    public void Pause()
+    {
+        source.Pause();
+    }
+
     public void Stop()
     {
         source.Stop();

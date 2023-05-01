@@ -10,6 +10,7 @@ public class PauseManager : MonoBehaviour
 
     void Awake()
     {
+
         if (_pauseCanvas != null) 
         {
             _pauseCanvas.enabled = false;
@@ -29,6 +30,10 @@ public class PauseManager : MonoBehaviour
 
             if (_pauseCanvas.enabled)
             {
+                AudioManager _audioManager = FindObjectOfType<AudioManager>();
+                _audioManager.PauseAll();
+                _audioManager.Play("Pausa");
+
                 _cameraRotation.BlockRotation();
                 _playerMovement.BlockMovement();
 
@@ -36,6 +41,10 @@ public class PauseManager : MonoBehaviour
             }
             else 
             {
+                AudioManager _audioManager = FindObjectOfType<AudioManager>();
+                _audioManager.Stop("Pausa");
+                _audioManager.ResumeAll();
+
                 _cameraRotation.ReleaseRotation();
                 _playerMovement.ReleaseMovement();
 
@@ -46,6 +55,10 @@ public class PauseManager : MonoBehaviour
 
     public void ClosePause() 
     {
+        AudioManager _audioManager = FindObjectOfType<AudioManager>();
+        _audioManager.Stop("Pausa");
+        _audioManager.ResumeAll();
+
         _pauseCanvas.enabled = false;
 
         _cameraRotation.ReleaseRotation();

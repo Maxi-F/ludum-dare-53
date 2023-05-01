@@ -26,7 +26,7 @@ public class Ghost : MonoBehaviour, GhostInterface
 
     private void ReceivedExpectedObject()
     {
-            _ghostMessageSender.ShowDescription(_expectedGivenObjectDescription, _nextGhost == null);
+            _ghostMessageSender.ShowDescription(_expectedGivenObjectDescription, "", _nextGhost == null);
             if(_nextGhost != null)
             {
                 _nextGhost.gameObject.SetActive(true);

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,9 +8,14 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
 
     public static AudioManager instance;
+    
+    [HideInInspector]
+    private Stack<List<Sound>> _pauseStack;
 
     void Awake()
     {
+        _pauseStack = new Stack<List<Sound>>();
+
         if(instance == null)
         {
             instance = this;
@@ -54,6 +60,29 @@ public class AudioManager : MonoBehaviour
             sound.Stop();
         }
     }
+
+    public void PauseAll()
+    {
+        List<Sound> _playingSounds = new List<Sound>(); 
+        foreach (Sound sound in sounds)
+        {
+            if (sound.source.isPlaying)
+            {
+                _playingSounds.Add(sound);
+            }
+            sound.Pause();
+        }
+        _pauseStack.Push(_playingSounds);
+    }
+
+    public void ResumeAll()
+    {
+        List<Sound> _soundsToPlay = _pauseStack.Pop();
+
+        _soundsToPlay.ForEach(sound => sound.Play());
+        _soundsToPlay.Clear();
+    }
+
     private Sound FindSound (string name)
     {
         Sound foundSound = Array.Find(sounds, sound => sound.name == name);
