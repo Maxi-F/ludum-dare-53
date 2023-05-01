@@ -25,7 +25,7 @@ public class ScenesManager : MonoBehaviour
 
     public static void LoadSceneGameplay()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene("Main Game");
     }
 
     public static void LoadSceneEndScreen()
