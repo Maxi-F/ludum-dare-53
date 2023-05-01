@@ -26,11 +26,20 @@ public class Ghost : MonoBehaviour, GhostInterface
 
     private void ReceivedExpectedObject()
     {
-            _ghostMessageSender.ShowDescription(_expectedGivenObjectDescription, _nextGhost == null);
-            if(_nextGhost != null)
-            {
-                _nextGhost.gameObject.SetActive(true);
-                gameObject.SetActive(false);
-            }
+        _ghostMessageSender.ShowDescription(_expectedGivenObjectDescription, "", _nextGhost == null);
+        if(_nextGhost != null)
+        {
+            _nextGhost.gameObject.SetActive(true);
+            gameObject.SetActive(false);
+        }
+        if(_nextGhost != null && _nextGhost.IsLastGhost())
+        {
+            _ghostMessageSender.SetMusicToPlay("Busqueda_objeto_final");
+        }
+    }
+
+    public bool IsLastGhost()
+    {
+        return _nextGhost == null;
     }
 }

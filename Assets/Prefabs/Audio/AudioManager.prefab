@@ -59,7 +59,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Busqueda_objeto_final
     clip: {fileID: 8300000, guid: a7502f5a00baa9342b7c269cb69def6a, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -71,19 +71,19 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Fantasmas_objetos
     clip: {fileID: 8300000, guid: edbc3d2cdde807e4991f7be67f6c1eb2, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Gameplay
     clip: {fileID: 8300000, guid: 2c7583289e178f74589b16613e098026, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Ilustraciones_intro
     clip: {fileID: 8300000, guid: 0f46c4dabc07fe940961a284e2a7089d, type: 3}
-    volume: 1
+    volume: 0.26
     pitch: 1
     loop: 1
     source: {fileID: 0}

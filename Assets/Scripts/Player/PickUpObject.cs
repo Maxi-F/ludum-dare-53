@@ -41,7 +41,7 @@ public class PickUpObject : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && heldObject == null)
         {
-            _objectDescription.ShowDescription(_visiblePickableObject.objectDescription);
+            _objectDescription.ShowDescription(_visiblePickableObject.objectDescription, "Agarrar");
             heldObject = _visiblePickableObject;
             UnIlluminateObject();
             heldObject.Disappear();
@@ -57,7 +57,6 @@ public class PickUpObject : MonoBehaviour
 
             if (objectInfo.rigidbody != null)
             {
-                Debug.Log(objectInfo.rigidbody.name);
                 Pickable pickableObject = objectInfo.rigidbody.gameObject.GetComponent<Pickable>();
                 if (pickableObject != null)
                 {

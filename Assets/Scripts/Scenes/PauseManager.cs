@@ -8,8 +8,12 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private KeyCode _pauseKey;
 
+    [HideInInspector]
+    private bool _wasAlreadyBlocked = false;
+
     void Awake()
     {
+
         if (_pauseCanvas != null) 
         {
             _pauseCanvas.enabled = false;
@@ -29,6 +33,10 @@ public class PauseManager : MonoBehaviour
 
             if (_pauseCanvas.enabled)
             {
+                AudioManager _audioManager = FindObjectOfType<AudioManager>();
+                _audioManager.PauseAll();
+                _audioManager.Play("Pausa");
+
                 _cameraRotation.BlockRotation();
                 _playerMovement.BlockMovement();
 
@@ -36,20 +44,39 @@ public class PauseManager : MonoBehaviour
             }
             else 
             {
-                _cameraRotation.ReleaseRotation();
-                _playerMovement.ReleaseMovement();
+                AudioManager _audioManager = FindObjectOfType<AudioManager>();
+                _audioManager.Stop("Pausa");
+                _audioManager.ResumeAll();
+
+                if(!_wasAlreadyBlocked)
+                {
+                    _cameraRotation.ReleaseRotation();
+                    _playerMovement.ReleaseMovement();
+                }
 
                 Time.timeScale = 1.0f;
             }
         }
     }  
 
+    public void SetWasAlreadyBlocked(bool value)
+    {
+        _wasAlreadyBlocked = value;
+    }
+
     public void ClosePause() 
     {
+        AudioManager _audioManager = FindObjectOfType<AudioManager>();
+        _audioManager.Stop("Pausa");
+        _audioManager.ResumeAll();
+
         _pauseCanvas.enabled = false;
 
-        _cameraRotation.ReleaseRotation();
-        _playerMovement.ReleaseMovement();
+        if (!_wasAlreadyBlocked)
+        {
+            _cameraRotation.ReleaseRotation();
+            _playerMovement.ReleaseMovement();
+        }
 
         Time.timeScale = 1.0f;
     }
